@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  height: 100vh;
+  background: #4090f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper {
+  background-color: #fff;
+  padding: 1.5em 1em;
+  border-radius: 8px;
+  /* box-shadow: 7px 7px #004caf, -5px -5px  #000; */
+  box-shadow: 0 0 20px rgba(0 0 0 / 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  max-width: 360px;
+  width: calc(100% - 20px);
+  gap: 1em;
+  & > * {
+    width: 100%;
+  }
+}
+button[type="submit"] {
+  color: #000;
+  background-color: lightgreen;
+  border: none;
+  padding: 0.75em;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  &:hover {
+    background-color: rgb(0, 255, 0);
+  }
+  transition: all 0.4s ease;
+}
+.result {
+  width: 100%;
+  position: relative;
+  & #generated-pass {
+    width: 100%;
+    padding: 0.75em;
+    padding-right: 2em;
+    border: 1px solid #a5a5a5;
+    border-radius: 4px;
+    /* &:focus {
+        outline: none;
+    } */
+  }
+  & button.copy {
+    position: absolute;
+    right: 0.25em;
+    width: 20px;
+    height: 30px;
+    top: 0.25em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+}
+.length {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5em;
+  & #pass-length {
+    width: 100%;
+  }
+}
+.pass-settings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.5em;
+  & label {
+    width: 100%;
+  }
+  & .input-ele {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5em;
+    & > * {
+        cursor: pointer;
+    }
+  }
+}
+
+.pass-indicator {
+  height: 3px;
+  border-radius: 4px;
+  &#weak {
+    width: 20%;
+    background-color: rgb(255, 68, 68);
+  }
+  &#medium {
+    width: 50%;
+    background-color: rgb(222, 202, 21);
+  }
+  &#strong {
+    width: 100%;
+    background-color: rgb(30, 181, 0);
+  }
+  transition: all 0.4s ease;
+}
+
+@media only screen and (min-width: 360px) {
+  .pass-settings .input-ele {
+    width: calc(50% - 4px);
+  }
+}
